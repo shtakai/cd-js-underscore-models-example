@@ -1,14 +1,23 @@
-var BookModel = Backbone.Model.extend({
+var Stack = Backbone.Model.extend({
   defaults: {
     title: null,
-    author: null
+    instructor: null,
+    language: null
   },
-  initialize: function(){
-    console.log("I'm alive!");
+  initialize: function () {
+    this.set('instructor', 'Michael Choi');
   }
 });
 
-var myBook = new BookModel();
-myBook.set('title', 'where the wild gun man');
-console.log(myBook);
+var stack_1 = new Stack({
+  title: 'Ruby on Rails',
+  language: 'Ruby'
+});
 
+var stack_2 = new Stack({
+  title: 'MEAN',
+  language: 'Javascript'
+});
+
+console.log(stack_1);
+console.log(stack_2);
